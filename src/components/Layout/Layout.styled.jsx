@@ -15,9 +15,9 @@ export const StyledHeader = styled.header`
   display: flex;
   align-items: center;
   margin-bottom: 15px;
-  /* nav {
+  nav {
     display: flex;
 
     gap: 30px;
-  } */
+  }
 `;
