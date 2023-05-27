@@ -14,7 +14,7 @@ export const StyledHeader = styled.header`
   height: 60px;
   display: flex;
   align-items: center;
-  margin-bottom: 15px;
+  margin-bottom: 15px; 
   nav {
     display: flex;
 

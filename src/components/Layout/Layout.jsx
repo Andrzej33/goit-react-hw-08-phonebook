@@ -11,13 +11,14 @@ export const Layout = () => {
    <Container>
         <StyledHeader>
         <nav>
+          {/* <p>register</p>
+          <p>login</p> */}
           <StyledNavLink to="/register" >
             Register
           </StyledNavLink>
           <StyledNavLink to="/login">Login</StyledNavLink>
         </nav>
       </StyledHeader>
-
       <Suspense fallback={<Loader />}>
         <Outlet />
       </Suspense>
