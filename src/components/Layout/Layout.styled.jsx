@@ -10,11 +10,13 @@ export const Container = styled.div`
 
 export const StyledHeader = styled.header`
   background-color: rgba(0, 0, 0, 0.05);
-  padding-left: 70px;
+  padding-left: 60px;
+  padding-right: 60px;
   height: 60px;
   display: flex;
   align-items: center;
   margin-bottom: 15px; 
+  justify-content: space-between;
   nav {
     display: flex;
 

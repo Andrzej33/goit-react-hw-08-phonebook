@@ -1,6 +1,6 @@
 
 import { createSlice } from"@reduxjs/toolkit";
-import { register, login } from 'API/API.Axios';
+import { register, login, logout} from 'API/API.Axios';
 // import authOperations from './auth-operations'
 
 const handlePending = state => {
@@ -11,15 +11,17 @@ const handlePending = state => {
     state.error = action.payload;
   };
 
+  const initialState = {
+    user:{name: null, email: null},
+    token: null,
+    isLoggedIn: false,
+    isRefreshing: false,
+    // error: false,
+}
+
 const authSlice = createSlice({
     name: 'auth',
-    initialState: {
-        user:{name: null, email: null},
-        token: null,
-        isLoggedIn: false,
-        isRefreshing: false,
-        // error: false,
-    },
+    initialState ,
     extraReducers: {
         [register.pending]: handlePending,
         [register.fulfilled](state, action) {
@@ -35,6 +37,13 @@ const authSlice = createSlice({
           state.isLoggedIn = true;
         },
         [login.rejected]: handleRejected,
+        [logout.pending]: handlePending,
+        [logout.fulfilled](state, action) {
+          state.user = {name: null, email: null};
+          state.token= null;
+          state.isLoggedIn= false;
+        },
+        [logout.rejected]: handleRejected,
         // [addContact.pending]: handlePending,
         // [addContact.fulfilled](state, action) {
         //   state.isLoading = false;

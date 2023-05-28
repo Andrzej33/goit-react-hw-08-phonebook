@@ -42,16 +42,16 @@ export const LoginForm = () => {
     return (
     <Formik
       initialValues={{
-        name: '',
+        email: '',
         password:'',
       }}
       // validationSchema={ContactsSchema}
       onSubmit={handleSubmit}
     >
       <Form>
-        <label>User name </label>
-        <Field name="name" />
-        <ErrorMessage name="name" component="span" />
+        <label>Email</label>
+        <Field name="email" />
+        <ErrorMessage name="email" component="span" />
         <label>Password</label>
         <Field type="password" name="password" />
         <ErrorMessage name="password" component="span" />

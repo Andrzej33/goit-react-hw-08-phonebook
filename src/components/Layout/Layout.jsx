@@ -1,28 +1,23 @@
-import { Container, StyledHeader } from './Layout.styled';
+import { Container } from './Layout.styled';
 import { Loader } from 'components/Loader/Loader';
 
 import { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
-import { StyledNavLink } from 'components/StyledLink/StyledLink';
+
 import { GlobalStyle } from 'components/GlobalStyle';
+import AppBar from 'components/AppBar/AppBar';
 
 export const Layout = () => {
   return(
+    <>
+    <AppBar/>
    <Container>
-        <StyledHeader>
-        <nav>
-          {/* <p>register</p>
-          <p>login</p> */}
-          <StyledNavLink to="/register" >
-            Register
-          </StyledNavLink>
-          <StyledNavLink to="/login">Login</StyledNavLink>
-        </nav>
-      </StyledHeader>
-      <Suspense fallback={<Loader />}>
+       <Suspense fallback={<Loader />}>
         <Outlet />
       </Suspense>
       <GlobalStyle/>
-   </Container>);
+   </Container>
+   </>
+   );
 
 };
