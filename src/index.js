@@ -3,9 +3,10 @@ import ReactDOM from 'react-dom/client';
 import { App } from 'components/App';
 import './index.css';
 import { ThemeProvider } from 'styled-components';
-import { store } from './Redux/store';
+import { store,persistor } from './Redux/store';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
+import { PersistGate } from 'redux-persist/integration/react';
 
 const theme = {
   colors: {
@@ -21,7 +22,9 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       <Provider store={store}>
         <BrowserRouter 
         basename="/goit-react-hw-08-phonebook">
+          <PersistGate loading={null} persistor={persistor}>
         <App />
+        </PersistGate>
         </BrowserRouter>
       </Provider>
     </ThemeProvider>

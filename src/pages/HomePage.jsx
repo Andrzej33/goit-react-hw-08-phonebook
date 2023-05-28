@@ -2,10 +2,12 @@
 
  const HomePage = () => {
 
-    <div>
+    return(
+        <div>
         <span>login</span>
         <span>logout</span>
     </div>
+    )
     
 }
 

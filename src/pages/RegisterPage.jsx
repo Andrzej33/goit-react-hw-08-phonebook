@@ -1,9 +1,10 @@
+import { RegisterForm } from "components/RegisterForm/RegisterForm";
+
 const RegisterPage = () => {
 
-    <div>
-        <span>login</span>
-        <span>logout</span>
-    </div>
+   return(
+    <RegisterForm/>
+   )
     
 }
 

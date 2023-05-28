@@ -1,12 +1,10 @@
+import { LoginForm } from "components/LoginForm/LoginForm";
+
+
 const LoginPage = () => {
 
    return(
-    <div>
-    <p>kljjlljjk</p>
-    <p>jkhkhjhkkhk</p>
-    <span>login</span>
-    <span>logout</span>
-</div>
+   <LoginForm/>
    )
     
 }

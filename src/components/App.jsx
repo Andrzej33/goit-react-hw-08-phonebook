@@ -1,5 +1,5 @@
 import { lazy } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 // import { GlobalStyle } from './GlobalStyle';
 import { Layout } from './Layout/Layout';
 
@@ -25,7 +25,7 @@ export const App = () => {
  <Route path='/register' element={<RegisterPage/>}/>
 <Route path='/login' element={<LoginPage/>}/> 
 <Route path='/contacts' element={<ContactsPage/>}/> 
-<Route path="*" element={<HomePage />} />
+<Route path="*" element={<Navigate to='/' />} />
         </Route>
       </Routes>
     // <Layout>
