@@ -1,7 +1,9 @@
-import { lazy } from 'react';
+import { lazy, useEffect } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 // import { GlobalStyle } from './GlobalStyle';
 import { Layout } from './Layout/Layout';
+import { useDispatch, } from 'react-redux';
+import { refreshCurrentUser } from 'API/API.Axios';
 
 const HomePage = lazy(() => import('../pages/HomePage'));
 const RegisterPage = lazy(() => import('../pages/RegisterPage'));
@@ -16,6 +18,11 @@ const ContactsPage = lazy(() => import('../pages/ContactsPage'));
 
 
 export const App = () => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(refreshCurrentUser())
+  },[dispatch])
   return (
    
       <Routes>

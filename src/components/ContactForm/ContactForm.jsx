@@ -34,12 +34,12 @@ export const ContactForm = () => {
       alert(`${values.number} is already exist in contacts`);
       return;
     }
-    {
-      const newValues = { name: values.name, phone: values.number };
+    // {
+    //   const newValues = { name: values.name, phone: values.number };
 
-      dispatch(addContact(newValues));
-    }
-
+    //   dispatch(addContact(newValues));
+    // }
+dispatch(addContact(values))
     actions.resetForm();
   };
 

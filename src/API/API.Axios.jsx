@@ -53,6 +53,29 @@ export const logout = createAsyncThunk(
   }
 );
 
+export const refreshCurrentUser = createAsyncThunk(
+  'auth/refresh',
+  async (_,thunkAPI) => {
+    
+      const state = thunkAPI.getState();
+      const persistedToken = state.auth.token;
+      if(persistedToken === null){
+        // return state;
+         return thunkAPI.rejectWithValue();
+      }
+      token.set(persistedToken);
+     try{
+      const response = await axios.get('/users/current');
+      return response.data;
+     }
+      
+      
+     catch (e) {
+      // return thunkAPI.rejectWithValue(e.message);
+    }
+  }
+);
+
 
 export const fetchContacts = createAsyncThunk(
   'contacts/fetchContacts',
