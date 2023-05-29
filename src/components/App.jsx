@@ -4,6 +4,10 @@ import { Routes, Route, Navigate } from 'react-router-dom';
 import { Layout } from './Layout/Layout';
 import { useDispatch, } from 'react-redux';
 import { refreshCurrentUser } from 'API/API.Axios';
+import RestrictedRoute from './AppBar/UserMenu/RestrictedRoure';
+import PrivateRoute from './AppBar/PrivateRoute';
+
+// import PrivateRoute from './AppBar/PrivateRoute';
 
 const HomePage = lazy(() => import('../pages/HomePage'));
 const RegisterPage = lazy(() => import('../pages/RegisterPage'));
@@ -28,10 +32,15 @@ export const App = () => {
       <Routes>
 <Route path='/' element={<Layout/>}>
 <Route index element={<HomePage/>}/>
+<Route path='/register'
+ element={
+ <RestrictedRoute
+  component={RegisterPage}
+   redirectTo='/contacts'/>}/>
+ {/* <Route path='/register' element={<RegisterPage/>}/> */}
+<Route path='/login' element={<RestrictedRoute component={LoginPage} redirectTo='/contacts'/>}/> 
+<Route path='/contacts' element={<PrivateRoute component={ContactsPage} redirectTo='/login'/>}/> 
 
- <Route path='/register' element={<RegisterPage/>}/>
-<Route path='/login' element={<LoginPage/>}/> 
-<Route path='/contacts' element={<ContactsPage/>}/> 
 <Route path="*" element={<Navigate to='/' />} />
         </Route>
       </Routes>
