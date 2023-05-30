@@ -1,7 +1,7 @@
 
 import { createSlice } from"@reduxjs/toolkit";
 import { register, login, logout, refreshCurrentUser} from 'API/API.Axios';
-// import authOperations from './auth-operations'
+
 
 const handlePending = state => {
     state.isLoading = true;
@@ -45,30 +45,18 @@ const authSlice = createSlice({
           state.isLoggedIn= false;
         },
         [logout.rejected]: handleRejected,
-        [refreshCurrentUser.pending]: handlePending,
+        [refreshCurrentUser.pending](state) {
+          state.isRefreshing = true;
+        },
         [refreshCurrentUser.fulfilled](state, action) {
           state.user = action.payload;
           state.isLoggedIn= true;
+          state.isRefreshing = true;
         },
-        [refreshCurrentUser.rejected]: handleRejected,
-        // [addContact.pending]: handlePending,
-        // [addContact.fulfilled](state, action) {
-        //   state.isLoading = false;
-        //   state.error = null;
-        //   state.items.push(action.payload);
-        // },
-        // [addContact.rejected]: handleRejected,
-        // [deleteContact.pending]: handlePending,
-        // [deleteContact.fulfilled](state, action) {
-        //   state.isLoading = false;
-        //   state.error = null;
-        //   const index = state.items.findIndex(
-        //     contact => contact.id === action.payload.id
-        //   );
-        //   state.items.splice(index, 1);
+        [refreshCurrentUser.rejected](state) {
+          state.isRefreshing = true;
+        }
          
-        // },
-        // [deleteContact.rejected]: handleRejected,  
     },
 });
 
