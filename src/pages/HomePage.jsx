@@ -1,12 +1,10 @@
+import HomeSection from "components/HomeSection/HomeSection";
 
 
  const HomePage = () => {
 
     return(
-        <div>
-        <span>login</span>
-        <span>logout</span>
-    </div>
+      <HomeSection/>
     )
     
 }
