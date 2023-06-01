@@ -1,4 +1,4 @@
-import { deleteContact } from 'API/API.Axios';
+import { deleteContact } from 'Redux/operations';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 

@@ -1,7 +1,7 @@
 import { Formik, Field } from 'formik';
 import { Form, ErrorMessage } from 'components/ContactForm/Form.styled';
 import { useDispatch } from 'react-redux';
-import { register } from 'API/API.Axios';
+import { register } from 'Redux/operations';
 // import * as Yup from 'yup';
 
 // const ContactsSchema = Yup.object().shape({

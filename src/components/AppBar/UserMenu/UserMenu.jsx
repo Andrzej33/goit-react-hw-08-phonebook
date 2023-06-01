@@ -3,7 +3,7 @@ import {useDispatch, useSelector } from "react-redux";
 
 import { MenuContainer } from "./UsetMenu.styled"
 import { selectUserName } from "Redux/selectors";
-import { logout } from "API/API.Axios";
+import { logout } from "Redux/operations";
 // import defaultAvatar from './default-avatar.png'
 
 export const UserMenu = () => {

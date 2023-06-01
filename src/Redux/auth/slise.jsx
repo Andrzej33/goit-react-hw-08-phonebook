@@ -1,6 +1,6 @@
 
 import { createSlice } from"@reduxjs/toolkit";
-import { register, login, logout, refreshCurrentUser} from 'API/API.Axios';
+import { register, login, logout, refreshCurrentUser} from 'Redux/operations';
 
 
 // const handlePending = state => {

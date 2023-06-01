@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { fetchContacts, deleteContact, addContact } from 'API/API.Axios';
+import { fetchContacts, deleteContact, addContact } from 'Redux/operations';
 
 const initialContacts = {
   items: [],

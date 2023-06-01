@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import { ListOfContacts } from './ContactList.styled';
 import { useSelector, useDispatch } from 'react-redux';
 import { selectContacts, selectFilteredContacts } from 'Redux/selectors';
-import { fetchContacts } from 'API/API.Axios';
+import { fetchContacts } from 'Redux/operations';
 import { ThreeDots } from 'react-loader-spinner';
 
 export const ContactList = () => {

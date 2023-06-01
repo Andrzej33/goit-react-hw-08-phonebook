@@ -3,7 +3,7 @@ import { Routes, Route, Navigate } from 'react-router-dom';
 // import { GlobalStyle } from './GlobalStyle';
 import { Layout } from './Layout/Layout';
 import { useDispatch, useSelector, } from 'react-redux';
-import { refreshCurrentUser } from 'API/API.Axios';
+import { refreshCurrentUser } from 'Redux/operations';
 import RestrictedRoute from './AppBar/UserMenu/RestrictedRoure';
 import PrivateRoute from './AppBar/PrivateRoute';
 import { selectIsRefreshing } from 'Redux/selectors';
