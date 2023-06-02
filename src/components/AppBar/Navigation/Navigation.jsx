@@ -7,9 +7,9 @@ const isLoggedIn = useSelector(selectIsLoggedIn)
     return(
         <nav>
           
-          <StyledNavLink to="/" >
+          {/* <StyledNavLink to="/" >
             Home
-          </StyledNavLink>
+          </StyledNavLink> */}
           {isLoggedIn &&
           <StyledNavLink to="/contacts">Contacts</StyledNavLink>}
         </nav>

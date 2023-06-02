@@ -10,7 +10,7 @@ import { selectIsRefreshing } from 'Redux/selectors';
 
 
 
-const HomePage = lazy(() => import('../pages/HomePage'));
+// const HomePage = lazy(() => import('../pages/HomePage'));
 const RegisterPage = lazy(() => import('../pages/RegisterPage'));
 const LoginPage = lazy(() => import('../pages/LoginPage'));
 const ContactsPage = lazy(() => import('../pages/ContactsPage'));
@@ -28,14 +28,15 @@ const isRefreshing = useSelector(selectIsRefreshing);
     isRefreshing && (
     <Routes>
     <Route path='/' element={<Layout/>}>
-    <Route index element={<HomePage/>}/>
+    {/* <Route index element={<HomePage/>}/> */}
+    <Route index element={<RestrictedRoute component={LoginPage} redirectTo='/contacts'/>}/> 
     <Route path='/register'
      element={
      <RestrictedRoute
       component={RegisterPage}
        redirectTo='/contacts'/>}/>
-    <Route path='/login' element={<RestrictedRoute component={LoginPage} redirectTo='/contacts'/>}/> 
-    <Route path='/contacts' element={<PrivateRoute component={ContactsPage} redirectTo='/login'/>}/> 
+    
+    <Route path='/contacts' element={<PrivateRoute component={ContactsPage} redirectTo='/'/>}/> 
     
     <Route path="*" element={<Navigate to='/' />} />
             </Route>
