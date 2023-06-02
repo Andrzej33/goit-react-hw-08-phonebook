@@ -35,7 +35,7 @@ margin-bottom: 10px;
   }
 
   button {
-    margin-top: 30px;
+    // margin-top: 30px;
     font-size: 16px;
     max-width: 170px;
     margin: 0 auto;
@@ -47,6 +47,7 @@ margin-bottom: 10px;
     letter-spacing: 1px;
     display: inline-block;
     cursor: pointer;
+    margin-top: 20px;
     transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1);
 
     &:hover,

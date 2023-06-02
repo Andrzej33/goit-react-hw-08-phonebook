@@ -7,6 +7,7 @@ import { store,persistor } from './Redux/store';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 import { PersistGate } from 'redux-persist/integration/react';
+import { ChakraProvider } from '@chakra-ui/react'
 
 const theme = {
   colors: {
@@ -23,7 +24,9 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <BrowserRouter 
         basename="/goit-react-hw-08-phonebook">
           <PersistGate loading={null} persistor={persistor}>
+          <ChakraProvider>
         <App />
+        </ChakraProvider>
         </PersistGate>
         </BrowserRouter>
       </Provider>
