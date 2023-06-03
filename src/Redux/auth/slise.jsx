@@ -17,7 +17,7 @@ import { register, login, logout, refreshCurrentUser} from 'Redux/operations';
     token: null,
     isLoggedIn: false,
     isRefreshing: false,
-    // error: false,
+    error: false,
 }
 
 const authSlice = createSlice({

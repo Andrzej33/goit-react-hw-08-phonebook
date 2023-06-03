@@ -33,14 +33,18 @@ export const EditForm = ({id,name,number}) => {
 
     //   dispatch(addContact(newValues));
     // }
+    const editedContact = {
+      id,
+      name: values.name,
+      number: values.number
+    }
    
-dispatch(editContact(id,values))
+dispatch(editContact(editedContact))
+// console.log(editedContact);
     // actions.resetForm();
   };
 
-  const showName = () => {
-    console.log(id);
-  }
+  
 
   return (
     <Formik
@@ -60,7 +64,7 @@ dispatch(editContact(id,values))
         <Field type="tel" name="number" />
         {/* <ErrorMessage name="number" component="span" /> */}
         <button type="submit">Edit contact</button>
-        <button type="button" onClick={showName}>name</button>
+        
       </Form>
     </Formik>
   );
