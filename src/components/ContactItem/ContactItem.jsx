@@ -2,15 +2,22 @@ import { deleteContact } from 'Redux/operations';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 
+import { ContactModal } from 'components/ContactModal/ContactModal';
+
 export const ContactItem = ({ contact: { id, name, number } }) => {
   const dispatch = useDispatch();
-
+  
   return (
     <>
       <p>
         {name}: <span>{number}</span>
       </p>
-
+      {/* <Button type="button" onClick={onOpen}
+      // //  onClick={() => dispatch(deleteContact(id))}
+      //  >
+        edit
+      </Button> */}
+      <ContactModal id={id} name={name} number={number}/>
       <button type="button" onClick={() => dispatch(deleteContact(id))}>
         delete
       </button>
