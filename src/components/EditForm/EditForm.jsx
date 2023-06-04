@@ -9,7 +9,7 @@ import { editContact } from 'Redux/operations';
 
 
 
-export const EditForm = ({id,name,number}) => {
+export const EditForm = ({id,name,number,onClose}) => {
 //   const { items } = useSelector(selectContacts);
   const dispatch = useDispatch();
 //   const [contactName, setContactName] = useState(name)
@@ -42,6 +42,7 @@ export const EditForm = ({id,name,number}) => {
 dispatch(editContact(editedContact))
 // console.log(editedContact);
     // actions.resetForm();
+    onClose()
   };
 
   

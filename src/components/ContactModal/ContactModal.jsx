@@ -18,22 +18,22 @@ import { EditForm } from 'components/EditForm/EditForm'
     // const [contactNumber, setContactNumber] = useState(number)
     // const handleNameChange = (event) => setContactName(event.target.value);
     // const handleNumberChange = (event) => setContactNumber(event.target.value);
-    const onCloseModal = () => {
+    // const onCloseModal = () => {
 
-        onClose();
+    //     onClose();
 
-    }
+    // }
     return (
       <>
         <Button onClick={onOpen}>edit</Button>
   
-        <Modal isOpen={isOpen} onClose={onCloseModal}>
+        <Modal isOpen={isOpen} onClose={onClose}>
           <ModalOverlay />
           <ModalContent>
             <ModalHeader>Edit Your Contact</ModalHeader>
             <ModalCloseButton />
             <ModalBody>
-            <EditForm id={id} name={name} number={number}/>
+            <EditForm id={id} name={name} number={number} onClose={onClose}/>
       {/* <Input value={contactName} variant='filled' onChange={handleNameChange} />
       <Input value={contactNumber} variant='filled' onChange={handleNumberChange} /> */}
             </ModalBody>
