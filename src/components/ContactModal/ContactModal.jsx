@@ -30,7 +30,7 @@ import { EditForm } from 'components/EditForm/EditForm'
         <Modal isOpen={isOpen} onClose={onCloseModal}>
           <ModalOverlay />
           <ModalContent>
-            <ModalHeader>Modal Title</ModalHeader>
+            <ModalHeader>Edit Your Contact</ModalHeader>
             <ModalCloseButton />
             <ModalBody>
             <EditForm id={id} name={name} number={number}/>
@@ -39,10 +39,10 @@ import { EditForm } from 'components/EditForm/EditForm'
             </ModalBody>
   
             <ModalFooter>
-              <Button colorScheme='blue' mr={3} onClick={onClose}>
+              {/* <Button colorScheme='blue' mr={3} onClick={onClose}>
                 Close
               </Button>
-              <Button variant='ghost'>Edit Contact</Button>
+              <Button variant='ghost'>Edit Contact</Button> */}
             </ModalFooter>
           </ModalContent>
         </Modal>

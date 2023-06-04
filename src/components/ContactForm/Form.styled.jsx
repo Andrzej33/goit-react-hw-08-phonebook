@@ -6,6 +6,9 @@ export const Form = styled(FormOfContacts)`
   flex-direction: column;
   max-width: 500px;
   margin: 0 auto;
+  padding: 20px;
+  border: solid #ff6f00 2px;
+  border-radius: 10px;
 
   label {
     padding-left: 20px;
@@ -41,6 +44,7 @@ margin-bottom: 10px;
     margin: 0 auto;
     padding: 10px 20px;
     border-radius: 20px;
+    border: solid transparent 1px;
     background-color: #ff6f00;
     color: white;
     text-transform: uppercase;
@@ -52,8 +56,9 @@ margin-bottom: 10px;
 
     &:hover,
     &:focus {
-      background: darken(#ff6f00, 5%);
-      border: 1px solid rgba(255, 255, 255, 0.6);
+      border: solid #ff6f00 1px;
+      background-color: #fff;
+color: #ff6f00;
       box-shadow: 0px 10px 15px -6px rgba(88, 85, 85, 0.2);
     }
   }

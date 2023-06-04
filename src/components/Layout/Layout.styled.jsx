@@ -17,6 +17,13 @@ export const StyledHeader = styled.header`
   align-items: center;
   margin-bottom: 15px; 
   justify-content: space-between;
+  @media screen and (max-width: 550px) {
+    flex-direction:column;
+    height: 90px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 10px;
+}
   nav {
     display: flex;
 

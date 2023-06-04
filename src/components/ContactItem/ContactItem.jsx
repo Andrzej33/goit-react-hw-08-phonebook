@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 
 import { ContactModal } from 'components/ContactModal/ContactModal';
+import { BtnBox } from './ContactItem.styled';
 
 export const ContactItem = ({ contact: { id, name, number } }) => {
   const dispatch = useDispatch();
@@ -17,10 +18,12 @@ export const ContactItem = ({ contact: { id, name, number } }) => {
       //  >
         edit
       </Button> */}
+      <BtnBox>
       <ContactModal id={id} name={name} number={number}/>
       <button type="button" onClick={() => dispatch(deleteContact(id))}>
         delete
       </button>
+      </BtnBox>
     </>
   );
 };

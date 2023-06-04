@@ -25,7 +25,7 @@ export const ListOfContacts = styled.ul`
       position: relative;
   display: block;
   padding: .4em .4em .4em 2em;
-  margin: .5em 0;
+  /* margin: .5em 0; */
   
   /* text-decoration: none; */
 }

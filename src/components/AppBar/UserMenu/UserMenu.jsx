@@ -4,6 +4,7 @@ import {useDispatch, useSelector } from "react-redux";
 import { MenuContainer } from "./UsetMenu.styled"
 import { selectUserName } from "Redux/selectors";
 import { logout } from "Redux/operations";
+import { Avatar} from '@chakra-ui/react'
 // import defaultAvatar from './default-avatar.png'
 
 export const UserMenu = () => {
@@ -14,6 +15,7 @@ export const UserMenu = () => {
     return(
       <MenuContainer>
         {/* <img src="/src/components/img/giraffe.png" alt="hg" /> */}
+        <Avatar bg='blue.500' size='sm' name='A V' src="/giraffe.png" />
         <span>Hello, {name}!</span>
         <button type='button' onClick={()=>{
             dispatch(logout())
