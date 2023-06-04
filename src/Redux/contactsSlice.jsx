@@ -51,6 +51,8 @@ export const contactsSlice = createSlice({
       //   contact => contact.id === action.payload.id
       // );
       // state.items.splice(index, 1);
+      state.items = state.items.map(contact => contact.id !== action.payload.id ? contact: action.payload);
+
       console.log('replace');
   })
   .addCase((editContact.rejected), handleRejected)
