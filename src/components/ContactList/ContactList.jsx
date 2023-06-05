@@ -4,7 +4,8 @@ import { ListOfContacts } from './ContactList.styled';
 import { useSelector, useDispatch } from 'react-redux';
 import { selectContacts, selectFilteredContacts } from 'Redux/selectors';
 import { fetchContacts } from 'Redux/operations';
-import { ThreeDots } from 'react-loader-spinner';
+// import { ThreeDots } from 'react-loader-spinner';
+import { Spinner } from '@chakra-ui/react'
 
 export const ContactList = () => {
   const dispatch = useDispatch();
@@ -17,7 +18,13 @@ export const ContactList = () => {
 
   return (
     <ListOfContacts>
-      {isLoading && <ThreeDots color="darkblue" />}
+      {isLoading && <Spinner
+  thickness='5px'
+  speed='0.55s'
+  emptyColor='gray.200'
+  color='blue.500'
+  size='xl'
+/>}
       {error && <b>{error}</b>}
       {filteredContacts.length !== 0 ? (
         filteredContacts.map(contact => {

@@ -1,6 +1,6 @@
 import { Container } from './Layout.styled';
-import { Loader } from 'components/Loader/Loader';
-
+// import { Loader } from 'components/Loader/Loader';
+import { Spinner } from '@chakra-ui/react'
 import { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
@@ -19,7 +19,13 @@ export const Layout = () => {
     <AppBar/>
     {!isLoggedIn && <GreetingTitle/>}
    <Container>
-       <Suspense fallback={<Loader />}>
+       <Suspense fallback={<Spinner
+  thickness='5px'
+  speed='0.55s'
+  emptyColor='gray.200'
+  color='blue.500'
+  size='xl'
+/>}>
         <Outlet />
       </Suspense>
       <GlobalStyle/>

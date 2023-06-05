@@ -5,4 +5,5 @@ export const Title = styled.h2`
   letter-spacing: 0.1em;
   text-align: center;
   color: darkblue;
+  margin: 30px;
 `;

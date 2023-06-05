@@ -6,6 +6,10 @@ export const FilterBox = styled.div`
     padding-left: 40px;
     align-items: center;
 margin-bottom: 20px;
+@media screen and (max-width: 440px) {
+  flex-direction: column;
+ 
+}
     input{
         background: #ecf0f3;
   padding: 10px;

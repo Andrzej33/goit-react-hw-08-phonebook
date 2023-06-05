@@ -15,7 +15,7 @@ export const UserMenu = () => {
     return(
       <MenuContainer>
         {/* <img src="/src/components/img/giraffe.png" alt="hg" /> */}
-        <Avatar bg='blue.500' size='sm' name='A V' src="/giraffe.png" />
+        <Avatar bg='blue.400' size='sm' name={name[0]} src="/giraffe.png" />
         <span>Hello, {name}!</span>
         <button type='button' onClick={()=>{
             dispatch(logout())
