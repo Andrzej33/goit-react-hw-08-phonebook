@@ -24,14 +24,11 @@ export const LoginForm = () => {
     const dispatch = useDispatch();
   
     const handleSubmit = (values, actions) => {
-// if(values.email.trim().length < 5){
-//   console.log('fail');
-//   return
-// }
-// if( values.password.trim().length < 7){
-//   console.log('fail');
-//   return
-// }
+if(values.email.trim().length < 4 && values.password.trim().length < 7){
+  
+  return
+}
+
       dispatch(login(values));
       actions.resetForm();
       

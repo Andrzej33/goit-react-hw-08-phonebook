@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Form as FormOfContacts,ErrorMessage as FormikError } from 'formik';
+import { Form as FormOfContacts, ErrorMessage as FormikError } from 'formik';
 
 export const Form = styled(FormOfContacts)`
   display: flex;
@@ -12,11 +12,11 @@ export const Form = styled(FormOfContacts)`
 
   label {
     padding-left: 20px;
-margin-bottom: 10px;
+    margin-bottom: 10px;
     display: block;
     font-size: 18px;
     color: #666;
-   
+
     cursor: pointer;
   }
 
@@ -38,7 +38,6 @@ margin-bottom: 10px;
   }
 
   button {
-    // margin-top: 30px;
     font-size: 16px;
     max-width: 170px;
     margin: 0 auto;
@@ -58,17 +57,16 @@ margin-bottom: 10px;
     &:focus {
       border: solid #ff6f00 1px;
       background-color: #fff;
-color: #ff6f00;
+      color: #ff6f00;
       box-shadow: 0px 10px 15px -6px rgba(88, 85, 85, 0.2);
     }
   }
 `;
 
-
 export const ErrorMessage = styled(FormikError)`
-margin-bottom: 20px;
+  margin-bottom: 20px;
   font-size: 14px;
   padding-left: 20px;
-  color:red;
+  color: red;
   /* color: {p => p.theme.color.accent} */
-`
+`;
