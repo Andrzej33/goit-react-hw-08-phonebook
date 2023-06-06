@@ -4,12 +4,14 @@ import { ListOfContacts } from './ContactList.styled';
 import { useSelector, useDispatch } from 'react-redux';
 import { selectContacts, selectFilteredContacts } from 'Redux/selectors';
 import { fetchContacts } from 'Redux/operations';
-// import { ThreeDots } from 'react-loader-spinner';
-import { Spinner } from '@chakra-ui/react'
+
+import { Spinner,Center } from '@chakra-ui/react'
 
 export const ContactList = () => {
   const dispatch = useDispatch();
-  const { isLoading, error } = useSelector(selectContacts);
+  const { isLoading
+    // , error
+   } = useSelector(selectContacts);
 
   const filteredContacts = useSelector(selectFilteredContacts);
   useEffect(() => {
@@ -18,14 +20,14 @@ export const ContactList = () => {
 
   return (
     <ListOfContacts>
-      {isLoading && <Spinner
+      {isLoading && <Center w='100%'><Spinner
   thickness='5px'
   speed='0.55s'
   emptyColor='gray.200'
   color='blue.500'
   size='xl'
-/>}
-      {error && <b>{error}</b>}
+/></Center>}
+      {/* {error && <b>{error}</b>} */}
       {filteredContacts.length !== 0 ? (
         filteredContacts.map(contact => {
           return (

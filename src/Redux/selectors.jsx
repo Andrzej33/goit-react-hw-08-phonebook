@@ -10,7 +10,7 @@ export const selectUserEmail = state => state.auth.user.email;
 
 export const selectContacts = state => state.contacts;
 export const selectIsLoading = state => state.contacts.isLoading;
-export const selectError = state => state.contacts.error;
+export const selectError = state => state.auth.error;
 export const selectFilter = state => state.filter;
 
 export const selectFilteredContacts = createSelector(
