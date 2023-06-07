@@ -4,6 +4,7 @@ import {
   deleteContact,
   addContact,
   editContact,
+  logout
 } from 'Redux/operations';
 
 const initialContacts = {
@@ -57,5 +58,10 @@ export const contactsSlice = createSlice({
           contact.id !== action.payload.id ? contact : action.payload
         );
       })
-      .addCase(editContact.rejected, handleRejected),
+      .addCase(editContact.rejected, handleRejected)
+      .addCase(logout.fulfilled, state => {
+        state.isLoading = false;
+        state.error = null;
+        state.items = [];
+      }),
 });
