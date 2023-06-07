@@ -4,7 +4,7 @@ export const MenuContainer = styled.div`
   display: flex;
   align-items: center;
   gap: 20px;
-  @media screen and (max-width: 572px) {
+  @media screen and (max-width: 690px) {
     gap: 10px;
   }
   span {

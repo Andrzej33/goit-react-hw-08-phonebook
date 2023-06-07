@@ -2,6 +2,7 @@ import { Form } from 'components/ContactForm/Form.styled';
 import { Formik, Field } from 'formik';
 import { useDispatch } from 'react-redux';
 import { editContact } from 'Redux/operations';
+import PropTypes from 'prop-types';
 
 export const EditForm = ({ id, name, number, onClose }) => {
   const dispatch = useDispatch();
@@ -36,3 +37,11 @@ export const EditForm = ({ id, name, number, onClose }) => {
     </Formik>
   );
 };
+
+
+EditForm.propTypes = {
+  id: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    number: PropTypes.string.isRequired,
+    onClose:PropTypes.func.isRequired,
+ };

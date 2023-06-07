@@ -15,15 +15,15 @@ export const StyledHeader = styled.header`
   height: 60px;
   display: flex;
   align-items: center;
-  margin-bottom: 15px; 
+  margin-bottom: 15px;
   justify-content: space-between;
-  @media screen and (max-width: 550px) {
-    flex-direction:column;
-    height: 90px;
+  @media screen and (max-width: 670px) {
+    flex-direction: column;
+    height: 100px;
     padding-left: 20px;
     padding-right: 20px;
     padding-bottom: 10px;
-}
+  }
   nav {
     display: flex;
 

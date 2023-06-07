@@ -5,34 +5,36 @@ import { register } from 'Redux/operations';
 import * as Yup from 'yup';
 
 const ContactsSchema = Yup.object().shape({
-    name: Yup.string().required('Required field'),
-    email: Yup.string().min(5, 'must be at least 5 characters long').email('must be a valid email').required('Required field'),
-    password: Yup.string().min(8, 'must be at least 8 characters long').required('Required field')
-      .typeError("That doesn't look like a password")
-      .required('Required field'),
-  });
+  name: Yup.string().required('Required field'),
+  email: Yup.string()
+    .min(5, 'must be at least 5 characters long')
+    .email('must be a valid email')
+    .required('Required field'),
+  password: Yup.string()
+    .min(8, 'must be at least 8 characters long')
+    .required('Required field')
+    .typeError("That doesn't look like a password")
+    .required('Required field'),
+});
 
 export const RegisterForm = () => {
+  const dispatch = useDispatch();
 
-   
-    const dispatch = useDispatch();
-  
-    const handleSubmit = (values, actions) => {
-  
-  // const {name,email,password} = values;
-  // if(!name.trim().length && email.trim().length < 5 && password.trim().length <= 8){
-  //   return prompt('do correct fullfield form')
-  // }
-      dispatch(register(values));
-      actions.resetForm();
-    };
+  const handleSubmit = (values, actions) => {
+    if(values.email.trim().length < 4 || values.password.trim().length < 7 || !values.name.trim().length){
+  console.log('returned')
+      return
+    }
+    dispatch(register(values));
+    actions.resetForm();
+  };
 
-    return (
+  return (
     <Formik
       initialValues={{
         name: '',
         email: '',
-        password:'',
+        password: '',
       }}
       validationSchema={ContactsSchema}
       onSubmit={handleSubmit}
@@ -50,5 +52,5 @@ export const RegisterForm = () => {
         <button type="submit">Confirm</button>
       </Form>
     </Formik>
-  ); 
-}
+  );
+};
