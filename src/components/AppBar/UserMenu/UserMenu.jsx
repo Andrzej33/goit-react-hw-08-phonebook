@@ -10,8 +10,8 @@ export const UserMenu = () => {
 
   return (
     <MenuContainer>
-      {/* <img src="/src/components/img/giraffe.png" alt="hg" /> */}
-      <Avatar bg="blue.400" size="sm" name={name[0]} src="/giraffe.png" />
+      
+      <Avatar bg="blue.400" size="sm" name={name[0]} src="https://i.pravatar.cc/150" />
       <span>Hello, {name}!</span>
       <button
         type="button"
